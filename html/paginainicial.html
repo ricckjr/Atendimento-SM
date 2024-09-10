@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SÓ Mulltass - Atendimentos</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="../css/categorias.css" rel="stylesheet">
-    <title>SÓ Mulltass - Atendimentos</title>
+    <link href="../css/paginainicial.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <!-- Barra lateral -->
-        <div class="sidebar">
+        <nav class="sidebar">
             <div class="logo">
                 <a href="index.html">
                     <img src="../img/EscritaSM.png" alt="Logo SM">
@@ -20,7 +20,7 @@
             <ul class="menu">
                 <!-- Menu Tickets -->
                 <li>
-                    <button class="menu-toggle" onclick="toggleSubmenu('tickets-submenu')">
+                    <button class="menu-toggle" aria-expanded="false" aria-controls="tickets-submenu" onclick="toggleSubmenu('tickets-submenu')">
                         <i class="fa-solid fa-ticket"></i>
                         <span class="menu-text">Tickets</span>
                         <i class="fa-solid fa-chevron-down"></i>
@@ -34,7 +34,7 @@
                 </li>
                 <!-- Menu Patrimônio -->
                 <li>
-                    <button class="menu-toggle" onclick="toggleSubmenu('patrimonio-submenu')">
+                    <button class="menu-toggle" aria-expanded="false" aria-controls="patrimonio-submenu" onclick="toggleSubmenu('patrimonio-submenu')">
                         <i class="fa-solid fa-box"></i>
                         <span class="menu-text">Patrimônio</span>
                         <i class="fa-solid fa-chevron-down"></i>
@@ -49,7 +49,7 @@
                 </li>
                 <!-- Menu Usuários -->
                 <li>
-                    <button class="menu-toggle" onclick="toggleSubmenu('usuarios-submenu')">
+                    <button class="menu-toggle" aria-expanded="false" aria-controls="usuarios-submenu" onclick="toggleSubmenu('usuarios-submenu')">
                         <i class="fa-solid fa-users"></i>
                         <span class="menu-text">Usuários</span>
                         <i class="fa-solid fa-chevron-down"></i>
@@ -61,32 +61,35 @@
                     </ul>
                 </li>
             </ul>
-        </div>
+        </nav>
+
         <!-- Barra superior -->
-        <div class="top-bar">
+        <header class="top-bar">
             <div class="top-left">
                 <span class="page-title">Atendimentos</span>
             </div>
             <div class="top-right">
                 <div class="notifications">
                     <i class="fa-solid fa-bell"></i>
-                    <div class="badge">3</div>
+                    <span class="badge">3</span>
                 </div>
                 <div class="search-bar">
                     <input type="text" placeholder="Pesquisar...">
                     <i class="fa-solid fa-search"></i>
                 </div>
                 <div class="profile-icon">
-                    <img src="../img/profile-pic.jpg" alt="Profile Picture">
+                    <img src="../img/profile-pic.jpg" alt="Foto do Perfil">
                 </div>
             </div>
-        </div>
+        </header>
+
         <!-- Conteúdo principal -->
-        <div class="main-content">
+        <main class="main-content">
             <h1>Bem-vindo ao Sistema de Atendimentos</h1>
             <p>Escolha uma opção no menu à esquerda para começar.</p>
-        </div>
+        </main>
     </div>
+
     <script>
         function toggleSubmenu(id) {
             const submenu = document.getElementById(id);
