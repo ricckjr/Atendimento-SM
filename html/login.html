@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="../css/login.css" rel="stylesheet"> <!-- Alterei o caminho do CSS -->
+    <link href="../css/login.css" rel="stylesheet"> <!-- CSS atualizado -->
     <title>SÓ Multas - Login</title>
 </head>
 <body>
-    <div class="login-container">
-        <!-- Formulário de Login -->
-        <div class="form-container">
+    <div class="login-wrapper">
+        <!-- Caixa de login -->
+        <div class="login-box">
+            <!-- Logo -->
             <div class="logo-container">
-                <img src="../img/EscritaSM.png" alt="Logo SM" class="logosm">
+                <img src="../img/EscritaSM.png" alt="Logo SM" class="logo">
             </div>
-            <div class="form">
-                <form action="paginainicial.html" method="POST"> <!-- Redirecionamento provisório -->
-                    <input type="text" name="usuario" placeholder="USUÁRIO" required>
-                    <input type="password" name="senha" placeholder="SENHA" required>
+
+            <!-- Formulário de Login -->
+            <form action="paginainicial.html" method="POST" class="login-form"> <!-- Redirecionamento provisório -->
+                <div class="input-group">
+                    <input type="text" name="usuario" placeholder="Usuário" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="senha" placeholder="Senha" required>
+                </div>
+                <div class="actions">
                     <a href="esqueci-senha.html" class="forgot-password">Esqueci a senha</a>
                     <input type="submit" value="Login" class="login-button">
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </body>
