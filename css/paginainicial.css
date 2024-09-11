@@ -7,11 +7,17 @@
 
 /* CONTAINER DA LOGO */
 .container-logo {
-    background-color: black;
+    background-color: #032841;
     width: 100%;
     height: 35px;
     display: flex;
     align-items: center;
+}
+
+.box-color {
+    background-color: #032841;
+    width: 15.9%;
+    height: 3000px;
 }
 
 .container-logo .logoescrita {
@@ -22,24 +28,23 @@
 
 /* CONTAINER DO MENU */
 .menu-container {
-    width: 150px; /* Largura do container do menu */
-    margin: 0px;
-    background-color: black;
+    width: 159px; /* Largura do container do menu */
+    margin: 0;
+    background-color: #032841;
 
     
 }
 
 /* ITEM DO MENU */
 .menu-item {
-    border: 1px solid #01b9f1;
-    margin-bottom: 1px;
-    border-radius: 5px;
-    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do item */
+    border: 1px solid #032841;
+    margin-bottom: 0;
+    overflow: hidden;
 }
 
 /* CABEÇALHO DO MENU */
 .menu-header {
-    background-color: #f4f4f4;
+    background-color: #032841;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -48,13 +53,15 @@
     border: none;
     width: 100%;
     text-align: left;
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'Lato', sans-serif;
+    color: white;
 }
 
 /* ÍCONES DO CABEÇALHO */
 .menu-header i {
     margin-right: 10px;
+    color: white;
     
 }
 
@@ -63,7 +70,7 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    background-color: #8511f1; /* Fundo branco para o conteúdo do menu */
+    background-color: #032841; /* Fundo branco para o conteúdo do menu */
 
 }
 
@@ -72,11 +79,11 @@
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: #333;
-    border-top: 1px solid #f50404;
+    color: white;
+    border-top: 1px solid white
 }
 
 /* EFEITO HOVER NOS LINKS */
 .menu-content a:hover {
-    background-color: #f509d5;
+    background-color: #094066;
 }
