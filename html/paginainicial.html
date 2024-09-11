@@ -3,65 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SÓ Mulltass - Atendimentos</title>
+    <title>SÓ Multas - Atendimentos</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="../css/paginainicial.css" rel="stylesheet">
 </head>
 <body>
-    <!-- CONTAINER DA LOGO ESCRITA -->
-    <div class="container-logo"> 
-        <a href="home.html">
-            <img class="logoescrita" src="../img/EscritaSM.png" alt="LogoSM">
-        </a>
+    <!-- CONTAINER DA LOGO E BARRA SUPERIOR -->
+    <div class="top-bar">
+        <div class="container-logo">
+            <a href="home.html">
+                <img class="logoescrita" src="../img/EscritaSM.png" alt="Logo SM">
+            </a>
+        </div>
+        <div class="user-info">
+            <img src="../img/profile.jpg" alt="Profile" class="profile-pic">
+            <span class="user-name">Nome do Usuário</span>
+            <i class="fas fa-bell notification-icon"></i>
+        </div>
     </div>
 
     <!-- CONTAINER DOS MENUS -->
-<section class="box-color">
-    <div class="menu-container">
-        <div class="menu-item">
-            <button class="menu-header" aria-expanded="false" aria-controls="tickets-content" onclick="toggleMenu('tickets-content')">
-                <i class="fa-solid fa-ticket"></i>
-                <span class="menu-text">Tickets</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div id="tickets-content" class="menu-content">
-                <a href="#">Abrir Tickets</a>
-                <a href="#">Meus Tickets</a>
-                <a href="#">Meus Fechados</a>
-                <a href="#">Tickets Cancelados</a>
+    <section class="box-color">
+        <div class="menu-container">
+            <div class="menu-item">
+                <button class="menu-header" aria-expanded="false" aria-controls="tickets-content" onclick="toggleMenu('tickets-content')">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span class="menu-text">Tickets</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div id="tickets-content" class="menu-content">
+                    <a href="#">Abrir Tickets</a>
+                    <a href="#">Meus Tickets</a>
+                    <a href="#">Meus Fechados</a>
+                    <a href="#">Tickets Cancelados</a>
+                </div>
             </div>
-        </div>
 
-        <div class="menu-item">
-            <button class="menu-header" aria-expanded="false" aria-controls="patrimonio-content" onclick="toggleMenu('patrimonio-content')">
-                <i class="fa-solid fa-box"></i>
-                <span class="menu-text">Patrimônio</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div id="patrimonio-content" class="menu-content">
-                <a href="#">Ver Bens</a>
-                <a href="#">Cadastrar Bens</a>
-                <a href="#">Cadastrar Ambientes</a>
-                <a href="#">Cadastrar Unidades</a>
-                <a href="#">Prestadores de Serviços</a>
+            <div class="menu-item">
+                <button class="menu-header" aria-expanded="false" aria-controls="patrimonio-content" onclick="toggleMenu('patrimonio-content')">
+                    <i class="fa-solid fa-box"></i>
+                    <span class="menu-text">Patrimônio</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div id="patrimonio-content" class="menu-content">
+                    <a href="#">Ver Bens</a>
+                    <a href="#">Cadastrar Bens</a>
+                    <a href="#">Cadastrar Ambientes</a>
+                    <a href="#">Cadastrar Unidades</a>
+                    <a href="#">Prestadores de Serviços</a>
+                </div>
             </div>
-        </div>
 
-        <div class="menu-item">
-            <button class="menu-header" aria-expanded="false" aria-controls="usuarios-content" onclick="toggleMenu('usuarios-content')">
-                <i class="fa-solid fa-users"></i>
-                <span class="menu-text">Usuários</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div id="usuarios-content" class="menu-content">
-                <a href="#">Criar Usuários</a>
-                <a href="#">Criar Grupos</a>
-                <a href="#">Permissões</a>
+            <div class="menu-item">
+                <button class="menu-header" aria-expanded="false" aria-controls="usuarios-content" onclick="toggleMenu('usuarios-content')">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="menu-text">Usuários</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div id="usuarios-content" class="menu-content">
+                    <a href="#">Criar Usuários</a>
+                    <a href="#">Criar Grupos</a>
+                    <a href="#">Permissões</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <script>
         function toggleMenu(menuId) {
             const allMenus = document.querySelectorAll('.menu-content');
@@ -90,6 +98,5 @@
             menu.style.opacity = '0';
         });
     </script>
-    
 </body>
 </html>

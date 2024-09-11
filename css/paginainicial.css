@@ -5,54 +5,72 @@
     box-sizing: border-box;
 }
 
-/* CONTAINER DA LOGO */
-.container-logo {
+/* BARRA SUPERIOR */
+.top-bar {
     background-color: #032841;
-    width: 100%;
-    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    color: white;
+    height: 50px;
+}
+
+/* CONTAINER DA LOGO */
+.container-logo .logoescrita {
+    width: auto;
+    height: 30px;
+}
+
+/* INFORMAÇÕES DO USUÁRIO */
+.user-info {
     display: flex;
     align-items: center;
 }
 
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-name {
+    margin-right: 15px;
+}
+
+.notification-icon {
+    font-size: 20px;
+}
+
+/* MENU LATERAL */
 .box-color {
     background-color: #032841;
-    width: 15.9%;
-    height: 3000px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 10px;
+    color: white;
 }
 
-.container-logo .logoescrita {
-    width: auto;
-    height: 30px;
-    margin-left: 10%;
-}
-
-/* CONTAINER DO MENU */
 .menu-container {
-    width: 159px; /* Largura do container do menu */
-    margin: 0;
-    background-color: #032841;
-
-    
+    width: 100%;
 }
 
-/* ITEM DO MENU */
 .menu-item {
-    border: 1px solid #032841;
-    margin-bottom: 0;
+    border-bottom: 1px solid white;
     overflow: hidden;
 }
 
 /* CABEÇALHO DO MENU */
 .menu-header {
     background-color: #032841;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
     border: none;
     width: 100%;
-    text-align: left;
     font-size: 15px;
     font-family: 'Lato', sans-serif;
     color: white;
@@ -62,7 +80,6 @@
 .menu-header i {
     margin-right: 10px;
     color: white;
-    
 }
 
 /* CONTEÚDO DO MENU */
@@ -70,20 +87,35 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    background-color: #032841; /* Fundo branco para o conteúdo do menu */
-
+    background-color: #094066;
 }
 
-/* LINKS DO CONTEÚDO */
 .menu-content a {
     display: block;
-    padding: 10px;
+    padding: 10px 20px;
     text-decoration: none;
     color: white;
-    border-top: 1px solid white
+    transition: background-color 0.3s;
 }
 
-/* EFEITO HOVER NOS LINKS */
 .menu-content a:hover {
-    background-color: #094066;
+    background-color: #04395E;
+}
+
+/* CORRIGINDO LAYOUT NO MOBILE */
+@media (max-width: 768px) {
+    .box-color {
+        width: 100%;
+        height: auto;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-info {
+        justify-content: flex-end;
+        width: 100%;
+    }
 }
