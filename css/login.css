@@ -1,15 +1,14 @@
-/* Reset básico */
-body, h1, p, input, a {
+/* RESET PADRÃO */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fonte e cor de fundo */
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #032841;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,79 +16,83 @@ body {
     margin: 0;
 }
 
-/* Container principal */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* Container do formulário */
-.form-container {
-    text-align: center;
+.login-container {
     background-color: #031240;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    width: 100%;
-    max-width: 400px; /* Largura máxima do formulário */
-    margin-left: 20px; /* Adiciona uma margem à esquerda */
+    width: 350px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Logo dentro da caixa de formulário */
 .logo-container {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .logosm {
-    height: 100px; /* Ajuste conforme necessário */
-    width: auto;
+    width: 200px;
+    height: auto;
 }
 
-/* Estilo do formulário */
 .form {
     width: 100%;
 }
 
-form input[type="text"], 
-form input[type="password"] {
+.form input[type="text"],
+.form input[type="password"] {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #0056d6;
-    border-radius: 5px;
-    background-color: #111111;
-    color: #ffffff;
-    font-size: 16px;
-}
-
-form input[type="submit"] {
-    width: 100%;
-    padding: 15px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 4px;
     border: none;
-    border-radius: 5px;
-    background-color: #0056d6;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #094066;
+    color: white;
 }
 
-form input[type="submit"]:hover {
-    background-color: #0044bb;
+.form input[type="text"]::placeholder,
+.form input[type="password"]::placeholder {
+    color: #e0e0e0;
 }
 
-/* Link de senha esquecida */
-.forgot-password {
-    display: block;
-    color: #0056d6;
-    text-align: center;
+.form .forgot-password {
+    color: #e0e0e0;
     text-decoration: none;
-    margin-bottom: 15px;
     font-size: 14px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: right;
 }
 
-.forgot-password:hover {
-    text-decoration: underline;
+.form .forgot-password:hover {
+    color: #ffffff;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: none;
+    background-color: #031240;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #094066;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logosm {
+        width: 150px;
+    }
 }
