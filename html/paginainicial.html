@@ -9,94 +9,85 @@
     <link href="../css/paginainicial.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Barra lateral -->
-        <nav class="sidebar">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="../img/EscritaSM.png" alt="Logo SM">
-                </a>
-            </div>
-            <ul class="menu">
-                <!-- Menu Tickets -->
-                <li>
-                    <button class="menu-toggle" aria-expanded="false" aria-controls="tickets-submenu" onclick="toggleSubmenu('tickets-submenu')">
-                        <i class="fa-solid fa-ticket"></i>
-                        <span class="menu-text">Tickets</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <ul id="tickets-submenu" class="submenu">
-                        <li><a href="#">Abrir Tickets</a></li>
-                        <li><a href="#">Meus Tickets</a></li>
-                        <li><a href="#">Meus Fechados</a></li>
-                        <li><a href="#">Tickets Cancelados</a></li>
-                    </ul>
-                </li>
-                <!-- Menu Patrimônio -->
-                <li>
-                    <button class="menu-toggle" aria-expanded="false" aria-controls="patrimonio-submenu" onclick="toggleSubmenu('patrimonio-submenu')">
-                        <i class="fa-solid fa-box"></i>
-                        <span class="menu-text">Patrimônio</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <ul id="patrimonio-submenu" class="submenu">
-                        <li><a href="#">Ver Bens</a></li>
-                        <li><a href="#">Cadastrar Bens</a></li>
-                        <li><a href="#">Cadastrar Ambientes</a></li>
-                        <li><a href="#">Cadastrar Unidades</a></li>
-                        <li><a href="#">Prestadores de Serviços</a></li>
-                    </ul>
-                </li>
-                <!-- Menu Usuários -->
-                <li>
-                    <button class="menu-toggle" aria-expanded="false" aria-controls="usuarios-submenu" onclick="toggleSubmenu('usuarios-submenu')">
-                        <i class="fa-solid fa-users"></i>
-                        <span class="menu-text">Usuários</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <ul id="usuarios-submenu" class="submenu">
-                        <li><a href="#">Criar Usuários</a></li>
-                        <li><a href="#">Criar Grupos</a></li>
-                        <li><a href="#">Permissões</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+    <!-- CONTAINER DA LOGO ESCRITA -->
+    <div class="container-logo"> 
+        <a href="home.html">
+            <img class="logoescrita" src="../img/EscritaSM.png" alt="LogoSM">
+        </a>
+    </div>
 
-        <!-- Barra superior -->
-        <header class="top-bar">
-            <div class="top-left">
-                <span class="page-title">Atendimentos</span>
+    <!-- CONTAINER DOS MENUS -->
+    <div class="menu-container">
+        <div class="menu-item">
+            <button class="menu-header" aria-expanded="false" aria-controls="tickets-content" onclick="toggleMenu('tickets-content')">
+                <i class="fa-solid fa-ticket"></i>
+                <span class="menu-text">Tickets</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="tickets-content" class="menu-content">
+                <a href="#">Abrir Tickets</a>
+                <a href="#">Meus Tickets</a>
+                <a href="#">Meus Fechados</a>
+                <a href="#">Tickets Cancelados</a>
             </div>
-            <div class="top-right">
-                <div class="notifications">
-                    <i class="fa-solid fa-bell"></i>
-                    <span class="badge">3</span>
-                </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Pesquisar...">
-                    <i class="fa-solid fa-search"></i>
-                </div>
-                <div class="profile-icon">
-                    <img src="../img/profile-pic.jpg" alt="Foto do Perfil">
-                </div>
-            </div>
-        </header>
+        </div>
 
-        <!-- Conteúdo principal -->
-        <main class="main-content">
-            <h1>Bem-vindo ao Sistema de Atendimentos</h1>
-            <p>Escolha uma opção no menu à esquerda para começar.</p>
-        </main>
+        <div class="menu-item">
+            <button class="menu-header" aria-expanded="false" aria-controls="patrimonio-content" onclick="toggleMenu('patrimonio-content')">
+                <i class="fa-solid fa-box"></i>
+                <span class="menu-text">Patrimônio</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="patrimonio-content" class="menu-content">
+                <a href="#">Ver Bens</a>
+                <a href="#">Cadastrar Bens</a>
+                <a href="#">Cadastrar Ambientes</a>
+                <a href="#">Cadastrar Unidades</a>
+                <a href="#">Prestadores de Serviços</a>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <button class="menu-header" aria-expanded="false" aria-controls="usuarios-content" onclick="toggleMenu('usuarios-content')">
+                <i class="fa-solid fa-users"></i>
+                <span class="menu-text">Usuários</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="usuarios-content" class="menu-content">
+                <a href="#">Criar Usuários</a>
+                <a href="#">Criar Grupos</a>
+                <a href="#">Permissões</a>
+            </div>
+        </div>
     </div>
 
     <script>
-        function toggleSubmenu(id) {
-            const submenu = document.getElementById(id);
-            submenu.classList.toggle('open');
-            const icon = submenu.previousElementSibling.querySelector('i.fa-chevron-down');
-            icon.classList.toggle('rotate');
+        function toggleMenu(menuId) {
+            const allMenus = document.querySelectorAll('.menu-content');
+            const menu = document.getElementById(menuId);
+            const isExpanded = menu.style.maxHeight && menu.style.maxHeight !== '0px';
+
+            // Fechar todos os menus
+            allMenus.forEach(m => {
+                m.style.maxHeight = '0';
+                m.style.opacity = '0';
+            });
+
+            // Alternar o menu clicado
+            if (isExpanded) {
+                menu.style.maxHeight = '0';
+                menu.style.opacity = '0';
+            } else {
+                menu.style.maxHeight = menu.scrollHeight + 'px';
+                menu.style.opacity = '1';
+            }
         }
+
+        // Inicializar submenus como ocultos na carga da página
+        document.querySelectorAll('.menu-content').forEach(menu => {
+            menu.style.maxHeight = '0';
+            menu.style.opacity = '0';
+        });
     </script>
 </body>
 </html>

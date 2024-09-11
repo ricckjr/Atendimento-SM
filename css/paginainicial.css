@@ -1,217 +1,82 @@
-/* Reset básico */
+/* RESET PADRÃO */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fonte e cores globais */
-body {
-    font-family: 'Lato', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* Container principal */
-.container {
-    display: flex;
+/* CONTAINER DA LOGO */
+.container-logo {
+    background-color: black;
     width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-/* Barra lateral */
-.sidebar {
-    width: 220px; /* Aumenta a largura para uma melhor visualização */
-    background-color: #031240;
-    color: #fff;
+    height: 35px;
     display: flex;
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
+    align-items: center;
 }
 
-/* Logo */
-.sidebar .logo {
-    margin-bottom: 20px;
+.container-logo .logoescrita {
+    width: auto;
+    height: 30px;
+    margin-left: 10%;
 }
 
-.sidebar .logo img {
-    width: 150px;
-    height: auto;
+/* CONTAINER DO MENU */
+.menu-container {
+    width: 150px; /* Largura do container do menu */
+    margin: 0px;
+    background-color: black;
+
+    
 }
 
-/* Menu */
-.sidebar .menu {
-    list-style: none;
-    padding: 0;
+/* ITEM DO MENU */
+.menu-item {
+    border: 1px solid #01b9f1;
+    margin-bottom: 1px;
+    border-radius: 5px;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do item */
 }
 
-/* Itens de menu */
-.sidebar .menu li {
-    margin: 15px 0;
-    border-bottom: 1px solid #1c2b4c;
-    position: relative;
-}
-
-/* Botão do menu */
-.sidebar .menu .menu-toggle {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 16px; /* Aumenta o tamanho da fonte */
+/* CABEÇALHO DO MENU */
+.menu-header {
+    background-color: #f4f4f4;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    padding: 12px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-    border-radius: 5px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
 }
 
-.sidebar .menu .menu-toggle:hover {
-    background-color: #042057;
-    transform: scale(1.05);
+/* ÍCONES DO CABEÇALHO */
+.menu-header i {
+    margin-right: 10px;
+    
 }
 
-/* Submenus */
-.sidebar .submenu {
-    list-style: none;
-    padding-left: 20px;
+/* CONTEÚDO DO MENU */
+.menu-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    opacity: 0;
-    border-left: 2px solid #003f6c;
+    background-color: #8511f1; /* Fundo branco para o conteúdo do menu */
+
 }
 
-.sidebar .submenu li {
-    margin: 10px 0; /* Espaçamento maior entre itens de submenu */
-    border-bottom: 1px solid #1c2b4c;
-}
-
-.sidebar .submenu li:last-child {
-    border-bottom: none;
-}
-
-.sidebar .submenu li a {
-    color: #c0c4cc;
-    text-decoration: none;
-    transition: color 0.3s;
+/* LINKS DO CONTEÚDO */
+.menu-content a {
     display: block;
-    padding: 10px 15px;
-    border-radius: 4px;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-top: 1px solid #f50404;
 }
 
-.sidebar .submenu li a:hover {
-    color: #fff;
-    background-color: #042057;
-}
-
-/* Barra superior */
-.top-bar {
-    width: calc(100% - 220px);
-    background-color: #031240;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 220px;
-    height: 60px;
-}
-
-/* Ícones da barra superior */
-.top-bar .top-right {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Espaçamento maior entre os ícones */
-}
-
-.top-bar .notifications,
-.top-bar .profile-icon {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.top-bar .notifications i,
-.top-bar .profile-icon i {
-    font-size: 22px; /* Aumenta o tamanho dos ícones */
-    color: #d4e1ff;
-    transition: color 0.3s;
-}
-
-.top-bar .notifications i:hover,
-.top-bar .profile-icon i:hover {
-    color: #fff;
-}
-
-/* Notificações */
-.top-bar .notifications .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: #d9534f;
-    color: #fff;
-    border-radius: 50%;
-    width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-}
-
-/* Ícone de perfil */
-.top-bar .profile-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.top-bar .profile-icon img {
-    width: 100%;
-    height: auto;
-}
-
-/* Conteúdo principal */
-.main-content {
-    margin-left: 220px;
-    padding: 20px;
-    width: calc(100% - 220px);
-    height: 100%;
-    background-color: #fff;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.main-content h1 {
-    font-size: 26px; /* Aumenta o tamanho do título */
-    margin-bottom: 20px;
-}
-
-.main-content p {
-    font-size: 18px; /* Aumenta o tamanho do texto */
-}
-
-/* Transições e efeitos */
-.menu-toggle .rotate {
-    transform: rotate(180deg);
-}
-
-.submenu.open {
-    max-height: 500px;
-    opacity: 1;
+/* EFEITO HOVER NOS LINKS */
+.menu-content a:hover {
+    background-color: #f509d5;
 }
